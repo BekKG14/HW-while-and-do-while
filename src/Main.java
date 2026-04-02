@@ -19,5 +19,66 @@ void main() {
             distanceCoveredTwo = distanceCoveredTwo + checkingTheDistanceTwo;
             System.out.println("2.0 Держитесь! Осталось " + distanceCoveredTwo+ " метров");
     }
+
+    int budget = 800;
+    int days = 0;
+    int cost = 100;
+    while(budget > 0){
+        days++;
+        if(days % 5 == 0) {
+            continue;
+        }else {
+            budget = budget - cost;
+        }
+        ;
+    }
+    System.out.println("Денег хватит на " + days +" дней.");
+
+
+    int budgetTwo = 10000;
+    int costTwo = 100;
+    int daysTwo = 0;
+    for(; budgetTwo > 0; ){
+        daysTwo++;
+        if(daysTwo % 5 == 0){
+            continue;
+        }else {
+        budgetTwo = budgetTwo - costTwo;
+        }
+
+    }
+    System.out.println("Денег хватит на " + daysTwo +" дней.");
+
+    int month = 0;
+    int total = 0;
+    int goal = 12000000;
+    int savingMonthly = 15000;
+    do{
+      total = total + savingMonthly;
+      month++;
+      if (month % 6 ==0){
+          total = total + total * 7 / 100;
+      }
+      System.out.println("Накопил "+ total + "p. За " +month+ " месяцев." );
+      if (total >= goal){
+          break;
+      }
+    } while (true);
+
+    int charge = 0;
+    int minute = 0;
+    int overheats = 0;
+    while (charge < 100){
+        minute++;
+        charge = charge + 2;
+        if(minute % 10 == 0 ){
+            overheats++;
+            System.out.println("Перегрев, заряд " + charge+ "%");
+            if (overheats > 3){
+                System.out.println("Зарядка прекращена. Текущий заряд: "+ charge + "%");
+                break;
+            }
+        }
+    }
 }
 
