@@ -65,17 +65,22 @@ void main() {
       }
     } while (true);
 
-    int charge = 0;
+    int charge = 20;
     int minute = 0;
     int overheats = 0;
     while (charge < 100){
         minute++;
         charge = charge + 2;
+        if (charge >= 100){
+            System.out.println("Зарядка завершена. Достигнут заряд 100% за "+ minute+ " минут.");
+            break;
+        }
         if(minute % 10 == 0 ){
             overheats++;
-            System.out.println("Перегрев, заряд " + charge+ "%");
+            System.out.println("Перегрев, заряд " + charge+ "%. Время "+ minute +" минут");
+            minute = minute + 2;
             if (overheats > 3){
-                System.out.println("Зарядка прекращена. Текущий заряд: "+ charge + "%");
+                System.out.println("Зарядка прекращена. Текущий заряд: "+ charge + "%. Время зарядки " +minute+ " минут");
                 break;
             }
         }
